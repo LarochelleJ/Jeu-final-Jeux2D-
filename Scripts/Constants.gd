@@ -7,8 +7,12 @@ const PLATEFORM_PATHS = [
 ]
 
 const FLAG = preload("res://Scenes/Flag.tscn")
+const MAIN_SCENE = "res://Scenes/Main.tscn"
 const PLATFORM_MIN_X = 133
 const PLATFORM_MAX_X = 888
+const MIN_PLATFORM_TO_REACH = 3
+
+const WALK_SPEED = 300
 
 var plateforms_template = []
 

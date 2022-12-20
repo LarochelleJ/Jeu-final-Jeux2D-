@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Sprites/Terrain/Terrain (16x16).png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Plateforme/Plateforme-A.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Plateforme/Plateforme-A.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 79, 23.5 )

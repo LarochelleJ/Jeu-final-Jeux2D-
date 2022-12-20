@@ -135,6 +135,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 13 )
 animation = "idle"
+frame = 7
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -143,4 +144,6 @@ limit_left = 0
 limit_right = 1024
 limit_bottom = 610
 drag_margin_h_enabled = true
+smoothing_enabled = true
+smoothing_speed = 3.0
 editor_draw_drag_margin = true
