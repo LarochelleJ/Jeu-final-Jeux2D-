@@ -88,7 +88,9 @@ func _lava():
 		# Lorsque le joueur atterit sur la première plateforme, la lave est lente afin de lui
 		# laisser une chance de bien commencer le niveau
 		else:
-			$Lava.position.y -= 1
+			# Si la vitesse de la lave a été modifiée et quelle est inférieur à 1
+			# On utilise cette valeur à la place
+			$Lava.position.y -= 1 if lava_speed > 1 else lava_speed
 
 func _reset_lava():
 	_lava_active = false

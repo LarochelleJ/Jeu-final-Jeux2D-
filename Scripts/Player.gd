@@ -5,7 +5,7 @@ class_name Player
 signal update_score(points)
 
 export var walk_speed = 0 setget change_speed
-export var gravity = 1500
+export(int, 0, 3000) var gravity = 1500
 export var jump_height = 900
 
 var _direction = Vector2.ZERO
