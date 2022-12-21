@@ -3,6 +3,8 @@ extends Node2D
 signal update_score(points)
 signal player_hit_lava
 
+export(float, 0, 2) var lava_speed = 1.0
+
 # Nombre de plateforme atteinte
 var _platform_reached = 0
 # Nombre minimal de plateforme a atteintre avant de compter le score
@@ -20,7 +22,6 @@ var _rng = RandomNumberGenerator.new()
 
 var _lava_active = false
 var _lava_initial_position
-var _lava_speed = 1.0
 
 func _process(_delta):
 	# Les limites latérales suivent la hauteur du joueur
@@ -83,7 +84,7 @@ func _lava():
 	if _lava_active:
 		# La lave monte à la vitesse réelle lorsque le joueur est plus loin que la 1ere plateforme
 		if _platform_reached > 1:
-			$Lava.position.y -= _lava_speed
+			$Lava.position.y -= lava_speed
 		# Lorsque le joueur atterit sur la première plateforme, la lave est lente afin de lui
 		# laisser une chance de bien commencer le niveau
 		else:
@@ -99,7 +100,7 @@ func _new_level():
 	_min_platform_to_reach = Constants.MIN_PLATFORM_TO_REACH
 
 	# On augemente la vitesse de la lave de 20% à chaque niveau
-	_lava_speed *= 1.20
+	lava_speed *= 1.20
 	_generate_level()
 
 func _generate_level():
