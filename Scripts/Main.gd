@@ -21,6 +21,7 @@ func _on_Level_player_hit_lava():
 	$CanvasLayer/HP.frame = _hp
 	$Level.restart_level()
 	
+	# On 'recharge' le jeu lorsque le joueur n'as plus de vies
 	if !_hp:
 		GameVariables.game_is_running = false
 		if get_tree().change_scene(Constants.MAIN_SCENE):
