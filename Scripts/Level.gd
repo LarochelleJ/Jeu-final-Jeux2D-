@@ -149,14 +149,10 @@ func _on_Player_update_score(points):
 
 func _on_Flag_body_entered(body:Node):
 	if body is Player:
-		# Il se peut que le joueur est atteint le drapeau sans avoir atteint la plateforme
-		# On force alors le collide pour s'assurer qu'il obtient les points de la plateforme finale
-		var final_platform = _generated_platforms[_generated_platforms.size()-1]
-		# Si la plateforme a pas été atteinte avant, on ajoute les points
-		if !final_platform.collide(body):
-			_update_score(final_platform.points)
+		# Si la plateforme finale a déjà été atteinte, on peut passer au prochain niveau
+		if _last_plateform.collide(body):
+			_new_level()
 
-		_new_level()
 
 
 func _on_Lava_player_hit_lava():
